@@ -1,12 +1,15 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+// Permite CORS para todas las rutas
+app.use(cors());
 
 // Railway asigna dinámicamente un puerto, usa process.env.PORT
 const port = process.env.PORT || 3000;
 
-
 // Nueva ruta para devolver 15 usuarios
-app.get('/', (req, res) => {
+app.get('/users', (req, res) => {
     const users = [
         { id: 1, name: 'Juan Pérez', age: 28 },
         { id: 2, name: 'María García', age: 32 },
@@ -56,5 +59,5 @@ app.get('/products', (req, res) => {
 
 // Inicia el servidor en el puerto asignado
 app.listen(port, () => {
-    console.log(`API running on port ${port}`);
+    console.log(`API corriendo en el puerto ${port}`);
 });
