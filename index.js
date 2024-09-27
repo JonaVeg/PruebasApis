@@ -8,6 +8,11 @@ app.use(cors());
 // Railway asigna dinámicamente un puerto, usa process.env.PORT
 const port = process.env.PORT || 3000;
 
+// Ruta para la raíz
+app.get('/', (req, res) => {
+    res.send('API funcionando. Usa /users o /products para obtener datos.');
+});
+
 // Nueva ruta para devolver 15 usuarios
 app.get('/users', (req, res) => {
     const users = [
