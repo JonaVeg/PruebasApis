@@ -4,13 +4,9 @@ const app = express();
 // Railway asigna dinámicamente un puerto, usa process.env.PORT
 const port = process.env.PORT || 3000;
 
-// Ruta raíz ('/')
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
 // Nueva ruta para devolver 15 usuarios
-app.get('/users', (req, res) => {
+app.get('/', (req, res) => {
     const users = [
         { id: 1, name: 'Juan Pérez', age: 28 },
         { id: 2, name: 'María García', age: 32 },
